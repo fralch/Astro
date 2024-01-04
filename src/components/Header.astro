@@ -1,18 +1,34 @@
 ---
-console.log("header");
+import HeaderButton from "./HeaderButton.astro";
+
 
 ---
 
 <header>
-    <div class="py-8 px-4 mx-auto max-w-xl lg:py-16 lg:px-6">
+    <div class="py-8 px-4 mx-auto max-w-xl lg:py-16 lg:px-6 text-center">
         <h2 class="text-3xl font-extrabold leading-tight text-white sm:text-4xl lg:text-5xl lg:leading-none" >
             SpaceX Launches 🚀
         </h2>
         <p class="text-white">
             All the information about SpaceX launches, rockets, capsules, and more.
-        </p>
-
-        
-
+        </p>       
     </div>
+    <nav class="flex items-center justify-center px-4 py-4 mx-auto max-w-xl lg:py-8 lg:px-6 text-sm font-medium leading-5 text-white sm:text-base lg:text-lg   ">
+        <HeaderButton href="#launches" class="inline-block px-4 py-2 text-sm font-medium leading-5 text-white transition duration-150 ease-in-out bg-transparent border border-transparent rounded-md hover:text-gray-200 focus:outline-none focus:border-gray-300 focus:shadow-outline-gray active:bg-gray-50 active:text-gray-800">
+            <svg slot="icon" class="icon icon-tabler icon-tabler-info-circle" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /><path d="M12 9h.01" /><path d="M11 12h1v4h1" /></svg>
+            Launches
+        </HeaderButton>
+        <HeaderButton href="#rockets" class="inline-block px-4 py-2 text-sm font-medium leading-5 text-white transition duration-150 ease-in-out bg-transparent border border-transparent rounded-md hover:text-gray-200 focus:outline-none focus:border-gray-300 focus:shadow-outline-gray active:bg-gray-50 active:text-gray-800">
+            <svg slot="icon" class="icon icon-tabler icon-tabler-rocket" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3" /><path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3" /><path d="M15 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /></svg>
+            Rockets
+        </HeaderButton>
+        <HeaderButton href="#capsules" class="inline-block px-4 py-2 text-sm font-medium leading-5 text-white transition duration-150 ease-in-out bg-transparent border border-transparent rounded-md hover:text-gray-200 focus:outline-none focus:border-gray-300 focus:shadow-outline-gray active:bg-gray-50 active:text-gray-800">
+            <svg slot="icon" class="icon icon-tabler icon-tabler-capsule-horizontal" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 6m0 6a6 6 0 0 1 6 -6h6a6 6 0 0 1 6 6v0a6 6 0 0 1 -6 6h-6a6 6 0 0 1 -6 -6z" /></svg>
+            Capsules
+        </HeaderButton>
+        <HeaderButton href="#capsules" class="inline-block px-4 py-2 text-sm font-medium leading-5 text-white transition duration-150 ease-in-out bg-transparent border border-transparent rounded-md hover:text-gray-200 focus:outline-none focus:border-gray-300 focus:shadow-outline-gray active:bg-gray-50 active:text-gray-800">
+            <svg slot="badge" class="icon icon-tabler icon-tabler-brand-monday" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M19.5 15.5m-1.5 0a1.5 1.5 0 1 0 3 0a1.5 1.5 0 1 0 -3 0" /><path d="M9.5 7a1.5 1.5 0 0 1 1.339 2.177l-4.034 7.074c-.264 .447 -.75 .749 -1.305 .749a1.5 1.5 0 0 1 -1.271 -2.297l3.906 -6.827a1.5 1.5 0 0 1 1.365 -.876z" /><path d="M16.5 7a1.5 1.5 0 0 1 1.339 2.177l-4.034 7.074c-.264 .447 -.75 .749 -1.305 .749a1.5 1.5 0 0 1 -1.271 -2.297l3.906 -6.827a1.5 1.5 0 0 1 1.365 -.876z" /></svg>
+        </HeaderButton>
+
+    </nav>
 </header>
