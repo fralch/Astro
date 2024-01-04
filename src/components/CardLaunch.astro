@@ -1,0 +1,47 @@
+---
+interface Props {
+  id: string;
+  name: string;
+  img: string;
+  success: boolean; // Cambiado de sussess a success
+  flightNumber: number;
+  details: string | null;
+}
+
+const { id, name, img, success, flightNumber, details } = Astro.props;
+const successText = success ? 'Success' : 'Failed'; // Cambiado de sussesText a successText
+
+---
+<a class="flex w-620" href=`lauch/${id}`>
+    <div class="mx-auto px-5">
+      <div class="max-w-xs cursor-pointer rounded-lg bg-stone-800 p-2 shadow duration-150 hover:scale-105 hover:shadow-md">
+        <img class="w-full rounded-lg object-cover object-center" src={img} alt="product" />
+        <div>
+          <div class="my-6 flex items-center justify-between px-4">
+            <p class="font-bold text-gray-500">Estadp: </p>
+            <!-- asi podemos poner estilos condicionales  -->
+            <p class:list={[
+                "rounded-full px-2 py-0.5 text-xs font-semibold text-white",
+                {
+                  "bg-green-500": success,
+                  "bg-red-500": !success
+                }
+            ]}>{successText}</p>
+          </div>
+          <div class="my-4 flex items-center justify-between px-4">
+            <p class="text-sm font-semibold text-gray-500">Nombre:</p>
+            <p class="rounded-full bg-gray-200 px-2 py-0.5 text-xs font-semibold text-gray-600">{name}</p>
+          </div>
+          <div class="my-4 flex items-center justify-between px-4">
+            <p class="text-sm font-semibold text-gray-500">Numero de Vuelo</p>
+            <p class="rounded-full bg-gray-200 px-2 py-0.5 text-xs font-semibold text-gray-600">{flightNumber}</p>
+          </div>
+          <div class="my-4 flex items-center justify-between px-4">
+            <p class="text-sm font-semibold text-gray-500">Detalles</p>
+            <p class=" px-2 py-0.5 text-xs  text-gray-500">{details}</p>
+          </div>
+         
+        </div>
+      </div>
+    </div>
+  </a>

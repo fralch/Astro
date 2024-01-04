@@ -1,0 +1,33 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import type { GetStaticPaths } from "astro";
+import { getSpaceXid, getSpaceX } from "../../services/spacex";
+
+ export const prerender = false // con esto no se renderiza en build sino en runtime : https://youtu.be/RB5tR_nqUEw?si=KipK3L5wW3p5Ci2O&t=4883
+
+const { id } = Astro.params;
+
+let launch;
+if (id) {
+    launch = await getSpaceXid({ id });
+}
+console.log(launch);
+
+
+// // cuando comentas el prerender, se renderiza en build y ya no es necesario el getStaticPaths : https://youtu.be/RB5tR_nqUEw?si=KipK3L5wW3p5Ci2O&t=4883
+// export const getStaticPaths = async () => {
+//     const lauches = await getSpaceX();
+//     return lauches.map((launch) => ({
+//         params: { id: launch.id },
+//     }));
+// };
+---
+
+<Layout title="Launch">
+    <article>
+        <h1>{launch.id}</h1>
+        <p>{launch.name}</p>
+        <p>{launch.details}</p>
+        <img src={launch?.links?.patch.small} alt="" />
+    </article>
+</Layout>

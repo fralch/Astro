@@ -1,0 +1,23 @@
+---
+import CardLaunch from '../components/CardLaunch.astro';
+import { getSpaceX } from '../services/spaceX.js';
+
+ const lauches = await getSpaceX();
+ 
+---
+
+<div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+    {
+        lauches.map((launch) => (
+            <CardLaunch 
+                id={launch.id}
+                name={launch.name}
+                success={launch.success}
+                details={launch.details}
+                img={launch.links.patch.small}
+                flightNumber={launch.flight_number}
+            />
+
+        ))
+    }
+</div>

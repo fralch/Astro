@@ -1,5 +1,10 @@
 ---
 import Header from '../components/Header.astro';
+import { ViewTransitions } from 'astro:transitions';
+/* 👆 las view transitions son un componente que se puede importar desde astro
+y que permite hacer transiciones entre las vistas  como si fuera un router
+o una SPA, pero sin necesidad de usar JS, solo con HTML y CSS
+*/
 interface Props {
 	title: string;
 }
@@ -16,6 +21,7 @@ const { title } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<ViewTransitions />
 	</head>
 	<body class="bg-gray-900 min-h-screen pb-32">
 		
